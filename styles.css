@@ -28,7 +28,7 @@
 }
 
 html {
-  scroll-padding-top: calc(var(--header) + 0.75rem);
+  scroll-padding-top: 0;
 }
 
 body {
@@ -245,6 +245,7 @@ h1 em {
 
 .section {
   padding: 1.5rem 0 3.75rem;
+  scroll-margin-top: 5.75rem;
 }
 
 .section-head {
@@ -358,6 +359,7 @@ h2 {
 .gig-meta {
   margin-top: 0.85rem;
   font-size: 0.92rem;
+  overflow-wrap: anywhere;
 }
 
 .go {
@@ -535,10 +537,12 @@ h2 {
 }
 
 @media (max-width: 960px) {
-  .hero-grid,
-  .card-grid,
-  .filter-list {
+  .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .hero {
@@ -547,8 +551,17 @@ h2 {
 }
 
 @media (max-width: 700px) {
+  .section {
+    scroll-margin-top: 8.25rem;
+  }
+
   .container {
     width: min(1120px, calc(100% - 1.75rem));
+  }
+
+  .card-grid,
+  .filter-list {
+    grid-template-columns: 1fr;
   }
 
   .site-header {
